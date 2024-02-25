@@ -15,4 +15,5 @@ urlpatterns = [
     path('generics/', views.TodosGenericApiView.as_view(), name='index'),
     path('generics/<int:pk>', views.TodosGenericDetailApiView.as_view(), name='index'),
     path('viewsets/', include(router.urls)),
+    path('users/', views.UsersGenericApiView.as_view(), name='index'),
 ]

@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from .models import Todo
+from django.contrib.auth.models import User
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
-from .serializers import TodoSerializer
+from .serializers import TodoSerializer, UserSerializer
 from rest_framework.views import APIView
 from rest_framework import mixins, generics
 from rest_framework import viewsets
@@ -128,3 +129,7 @@ class TodoViewSet(viewsets.ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 # endregion
+    
+class UsersGenericApiView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
