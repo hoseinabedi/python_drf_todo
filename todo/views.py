@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from .serializers import TodoSerializer
 from rest_framework.views import APIView
 from rest_framework import mixins, generics
+from rest_framework import viewsets
 
 # Create your views here.
 
@@ -121,3 +122,9 @@ class TodosGenericDetailApiView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer 
 #endregion
+
+# region viewsets
+class TodoViewSet(viewsets.ModelViewSet):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
+# endregion
