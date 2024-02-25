@@ -8,4 +8,6 @@ urlpatterns = [
     path('cbv/<int:pk>', views.TodosDetailApiView.as_view(), name='index'),
     path('mixins/', views.TodosListMixinApiView.as_view(), name='index'),
     path('mixins/<int:pk>', views.TodosDetailMixinApiView.as_view(), name='index'),
+    path('generics/', views.TodosGenericApiView.as_view(), name='index'),
+    path('generics/<int:pk>', views.TodosGenericDetailApiView.as_view(), name='index'),
 ]
